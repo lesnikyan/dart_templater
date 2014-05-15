@@ -22,7 +22,7 @@ Used syntax:
 
 <% for key, val in users %> - cycle block
 
-<% for i in range 0, 10 %> - simplest cycle block
+<% for key in actions %> - simplest cycle block
 
 <%end%> - end of block
 
@@ -35,7 +35,7 @@ Logic operands: bound variable, strings (in ' or "), numbers.
 
 Alter condition <%else%>.
 
-Alter <% elseif boolExpression %>
+Alter <% elseif boolExpression %> - same syntax as 'if'
 
 Cycle 'for'.
 Can use Lists.
@@ -76,7 +76,7 @@ testing example of template:
         <div class="r1">Young man, <%= val.status%></div>
         <%end%>
       <%end%>
-      <% for i in range %>
+      <% for i in numbers %>
         <div>index = <%= i%> </div>
       <%end%>
       </div>
