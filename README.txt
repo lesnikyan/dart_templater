@@ -18,6 +18,7 @@ Used syntax:
 <%= user.name%> - print value: simple value or field of object.
 
 <% if someBoolValue %> - logic condition block
+<% elseif someBoolValue %> - alter logic condition block
 
 <% for key, val in users %> - cycle block
 
@@ -33,7 +34,8 @@ Available logic conditions: ==, !=, <, >, <=, >=
 Logic operands: bound variable, strings (in ' or "), numbers.
 
 Alter condition <%else%>.
-Just 'else', not 'else if', or 'elseif'.
+
+Alter <% elseif boolExpression %>
 
 Cycle 'for'.
 Can use Lists.
@@ -49,7 +51,6 @@ Variant <% for val in listVar %>
 What next:
 	Add comments. Really forget about them :)
 	Implement real 'range' method for creating cycle by number of iteration.
-	Add <%else if boolCondition %>, or <%elseif boolCondition%> .
 	Add cycle for Maps. Not sure that it necessary.
 	Users methods. Not sure too.
 

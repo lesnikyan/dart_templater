@@ -14,10 +14,12 @@ void main(){
       <% for key, val in users %>
         <div class="r1"><%= val.name%></div>
         <div class="r1"><%= val.position%></div>
-        <%if val.age > 18%>
-        <div class="r1"><%= val.age%> years old, status: <%= val.status%></div>
+        <%if val.age > 20%>
+          <div class="r1">--33 <%= val.age%> years old, status: <%= val.status%></div>
+        <%elseif val.age > 18 %>
+          <div> just status --22 <%= val.status%> </div>
         <%else%>
-        <div class="r1">Young man, <%= val.status%></div>
+          <div class="r1">--11 Young man, <%= val.status%></div>
         <%end%>
       <%end%>
       <% for i in range 0, 10 %>
@@ -30,8 +32,8 @@ void main(){
   ''';
   // name status position age
   List<OptionalUser> users = [];
-  for(int i = 1; i<=5; ++i){
-    users.add(new OptionalUser("Name_$i", "status_$i", "position_$i", 17+i));
+  for(int i = 1; i<=10; ++i){
+    users.add(new OptionalUser("Name_$i", "status_$i", "position_$i", 15+i));
   }
   Map<String,Object> contextData = {
       'user': new TestUser(),
