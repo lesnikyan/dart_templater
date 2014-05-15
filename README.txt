@@ -1,18 +1,18 @@
 
 Author: SergioLesnik@gmail.com
 
-What is it?
+1. What is it?
 Simple templating engine for Dart server.
 Was made for learning Dart as server-side platform.
 It's not a real serious templater, just result of some fun.
 But it works :)
 
-Files:
+2. Files:
 server.dart - tiny web server.
 tpl.dart - testing (or usage example) template.
 /templating/ - template engine files.
 
-Used syntax:
+3. Used syntax:
 <%%> - template includes of logic or values
 
 <%= user.name%> - print value: simple value or field of object.
@@ -28,27 +28,28 @@ Used syntax:
 
 Values have Dart-like syntax.
 
-Logic conditions 'if'.
+4. Syntax specification of elements.
+
+- Logic conditions 'if'.
 Simple bool value or condition (expression).
 Available logic conditions: ==, !=, <, >, <=, >=
 Logic operands: bound variable, strings (in ' or "), numbers.
 
-Alter condition <%else%>.
+- Alter condition <%else%>.
 
-Alter <% elseif boolExpression %> - same syntax as 'if'
+- Alter <% elseif boolExpression %> - same syntax as 'if'
 
-Cycle 'for'.
-Can use Lists.
-Variant <% for key, val in listVar %>
+- Cycle 'for'. Can use Lists.
+-- Variant <% for key, val in listVar %>
 	- key - array list index,
 	- val - value (any type)
 	- listVar - bound List variable.
 
-Variant <% for val in listVar %>
+-- Variant <% for val in listVar %>
 	- val - value of list position.
 
 
-What next:
+5. What next:
 	Add comments. Really forget about them :)
 	Implement real 'range' method for creating cycle by number of iteration.
 	Add cycle for Maps. Not sure that it necessary.
@@ -86,4 +87,5 @@ testing example of template:
 
 *****************************************************
 
-As you see, it have many trash in code. So I think, it is just symptom of unfinished work.
+As you see, it have many trash comments in code.
+So I think (I hope), it is just symptom of unfinished work.
