@@ -84,12 +84,19 @@ class Template {
           lex = new EndStartBlockLexeme(curcase);
         }
       } else {
-        lexemes.add(new StaticLexeme(split[index]));
-        if(word == '='){
+        //lexemes.add(new StaticLexeme(split[index]));
+        String prevStatWord = split[index];
+        if (word == '='){
           lex = new VarLexeme(curcase);
-        }else{
+        } else if (word == '!'){
+          lex = new CommentLexeme(curcase);
+          //print("1#$prevStatWord#");
+          prevStatWord = prevStatWord.replaceFirst(new RegExp(r'\n\s*$'), '');
+          //print("2#$prevStatWord#");
+        } else {
           lex = new UnknownLexeme('??? '+curcase);
         }
+        lexemes.add(new StaticLexeme(prevStatWord));
       }
       lexemes.add(lex);
     }
@@ -106,6 +113,9 @@ class Template {
       switch(lex.type){
         case 'tstatic':
           curNode.add(new StaticNode(lex.content));
+          break;
+        case 'comment':
+          curNode.add(new CommentNode(lex.content));
           break;
         case 'variable':
           curNode.add(new VarNode(lex.content));

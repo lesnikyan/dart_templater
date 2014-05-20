@@ -2,6 +2,13 @@ import 'templating/TemplateCore.dart';
 
 void main(){
   String tplSource = '''<%test%>
+  <%! singleline comment  %>
+  <%! singleline comment 2 %>
+  <!-- Between tpl comments block -->
+  <%!
+   this part
+   is multiline comment
+   %>
   <html>
     <head></head>
     <body>
@@ -12,6 +19,8 @@ void main(){
       <div class="c1">
       11 <%= x%><%= y%> 22
       <% for key, val in users %>
+        <%! Some comment
+        with multi strings %>
         <div class="r1"><%= val.name%></div>
         <div class="r1"><%= val.position%></div>
         <%if val.age > 20%>
@@ -22,6 +31,9 @@ void main(){
           <div class="r1">--11 Young man, <%= val.status%></div>
         <%end%>
       <%end%>
+      <div>Before comment block</div>
+      <%! Single string comment %>
+      <div>After comment block</div>
       <% for i in range 0, 10 %>
         <div>index = <%= i%> </div>
       <%end%>

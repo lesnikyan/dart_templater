@@ -12,6 +12,10 @@ class StaticLexeme extends Lexeme{
   StaticLexeme(content):super(content, 'tstatic'){}
 }
 
+class CommentLexeme extends Lexeme{
+  CommentLexeme(content):super(content, 'comment'){}
+}
+
 class VarLexeme extends Lexeme{
   VarLexeme(content):super(content, 'variable'){}
 }

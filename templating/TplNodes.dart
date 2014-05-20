@@ -11,7 +11,17 @@ class StaticNode extends TNode{
   final String content;
   StaticNode(this.content):super(false){}
   String render(TplContext context){
+    //print ("[${content}]");
     return content;
+  }
+}
+
+class CommentNode extends StaticNode {
+  CommentNode(String content):super(''){
+
+  }
+  String render(TplContext context){
+    return '';
   }
 }
 
